@@ -36,11 +36,13 @@ args = parser.parse_args()
 
 # Required input profile
 if not args.profile:
+    print("argument profile is required\n")
     parser.print_help()
     exit()
 
 # If action is add we need web ACL ID
 if args.action == 'add' and not args.webacl:
+    print("action add requires argument webacl\n")
     parser.print_help()
     exit()
 
