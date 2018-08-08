@@ -81,7 +81,7 @@ if args.action == 'remove':
             ResourceArn=args.arn
         )
     except ClientError as e:
-        print json.dumps({"action" : {args.action : e.response, "result" : False, "arn" : arn, "profile" : profile}}, indent=4)
+        print json.dumps({"action" : {args.action : e.response, "result" : False, "arn" : args.arn, "profile" : args.profile}}, indent=4)
         sys.exit(1)
     checkResource(args.profile, args.action, args.arn)
 elif args.action == 'add':
@@ -91,7 +91,7 @@ elif args.action == 'add':
             WebACLId=args.webacl
         )
     except ClientError as e:
-        print json.dumps({"action" : {args.action : e.response, "result" : False, "arn" : arn, "profile" : profile}}, indent=4)
+        print json.dumps({"action" : {args.action : e.response, "result" : False, "arn" : args.arn, "profile" : args.profile}}, indent=4)
         sys.exit(1)
     checkResource(args.profile, args.action, args.arn)
 else:
